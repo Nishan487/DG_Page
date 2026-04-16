@@ -1,16 +1,14 @@
-# React + Vite
+## 🔐 Login Page Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### What I Built
+I developed a responsive, secure-looking login page for the Digital Gurkha learning platform. 
+Key features include:
+* **Form Validation:** Real-time email format checking and password requirement alerts.
+* **State Management:** Handled loading states, error messaging, and password visibility toggling using React hooks.
+* **API Integration:** Implemented a dual-mode API handler that supports both real endpoints and a mock delay-based system for development testing.
+* **UI/UX:** Built with Tailwind CSS, featuring custom SVG icons and a clean, "Stone" themed aesthetic.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Decisions & Trade-offs
+* **Mock Toggle:** I included a `USE_MOCK` flag at the top of the file to allow for easy testing without needing a live backend connection.
+* **Visual Feedback:** I chose to use a custom `Spinner` and "Sign in..." state on the button to prevent double-submissions and improve user experience on slow connections.
+* **Validation Strategy:** I opted for `onBlur` validation combined with `onChange` clearing. This ensures users aren't shouted at while typing, but get immediate feedback once they move to the next field.
